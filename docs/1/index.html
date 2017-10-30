@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>世界時計</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body onLoad="setInterval('clock()', 1000)">
+    <p>世界時計</p>
+    <hr>
+    <div id="clock">
+        <select id="city">
+            <option value="-10">ホノルル（アメリカ）</option>
+            <option value="-8">ロサンゼルス（アメリカ）</option>
+            <option value="-5">ニューヨーク（アメリカ）</option>
+            <option value="-3">リオデジャネイロ（ブラジル）</option>
+            <option value="0">ロンドン（イギリス）</option>
+            <option value="2">カイロ（エジプト）</option>
+            <option value="5.5">ニューデリー（インド）</option>
+            <option value="7">バンコク（タイ）</option>
+            <option value="9" selected>東京（日本）</option>
+            <option value="10">シドニー（オーストラリア）</option>
+        </select>
+        <span id="timezone"></span>
+        <img src="worldmap.jpg">
+        <div id="date">----/--/-- ---</div>
+        <div id="time">--:--:--</div>
+    </div>
+    <hr>
+    <p>参考元：<a href="http://ascii.jp/elem/000/001/422/1422848/">日曜プログラミングは楽しい、趣味感覚で始めるJavaScript</a></p>
+</body>
+</html>

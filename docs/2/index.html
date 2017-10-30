@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>俳句自動生成</title>
+    <script>
+    // ２次元配列でワードを管理
+    var array = new Array(5);
+    // index = 文字数 - 1
+    array[0] = ["や","に","の","を","へ","と","ぞ","も","は"];
+    array[1] = [];
+    array[2] = [];
+    array[3] = [];
+    array[4] = [];
+
+    // 俳句生成
+    function generate() {
+        // 上５文字
+        document.getElementById("kami").innerHTML = get_ku(5);
+        // 中７文字
+        document.getElementById("naka").innerHTML = get_ku(7);
+        // 下５文字
+        document.getElementById("shimo").innerHTML = get_ku(5);
+    }
+    
+    // 句生成
+    function get_ku(ku_length) {
+        var num;            // 今何文字まで使ったかを覚えておく変数
+        var ku;             // 句
+        var word;           // ワード
+        var word_index;     // ワード index（文字数-1）
+        var prev_word_type; // 直前のワードタイプ　１：助詞 or 切れ字 ０：その他
+
+        num = 0;
+        prev_word_type = 0;
+        while ( num < ku_length ) {
+            // ワードを取得
+            if ( num == 0 ) {
+                // 文字数が0（ループ初回）
+                // 先頭
+                word_index = Math.floor( Math.random() * array.length );
+
+                // ワード取得
+            } else {
+                // 残り１文字なら
+                // 残り２文字なら
+
+            }
+            // これまでに使った文字数
+            num = num + word_index + 1;
+        }
+        // 完成した句を返す
+        return ku;
+    }
+
+    </script>
+    <style>
+        .haiku {
+            font-size: 24p;
+            writing-mode: vertical-rl;
+            border: medium solid olive;
+            background-color: beige;
+            padding: 10px;
+            height: 280px;
+        }
+        .haiku div { padding: 10px; }
+        #naka { text-align: center; }
+        #shimo { text-align: right; }
+    </style>
+</head>
+<body>
+    <p>俳句自動生成</p>
+    <form>
+        <input type="button" value="俳句を生成する" onclick="generate()">
+    </form>
+    <hr>
+    <div class="haiku" id="ku">
+        <div id="kami">（上五）</div>
+        <div id="naka">（中七）</div>
+        <div id="shimo">（下五）</div>
+    </div>
+</body>
+</html>
