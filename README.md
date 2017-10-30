@@ -1,3 +1,1 @@
 # wasc-js
-
-pull test
